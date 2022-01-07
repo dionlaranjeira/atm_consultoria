@@ -1,3 +1,7 @@
+import 'package:atm_consultoria/tela_clientes.dart';
+import 'package:atm_consultoria/tela_contato.dart';
+import 'package:atm_consultoria/tela_empresa.dart';
+import 'package:atm_consultoria/tela_servicos.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -11,10 +15,19 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-  void teste(){
-    setState(() {
+  void irTelaEmpresa(){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=> TelaEmpresa()));
+  }
+  void irTelaServicos(){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=> TelaServicos()));
+  }
 
-    });
+  void irTelaClientes(){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=> TelaClientes()));
+  }
+
+  void irTelaContato(){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=> TelaContato()));
   }
 
   @override
@@ -24,8 +37,10 @@ class _HomeState extends State<Home> {
         title: Text("ATM Consultoria"),
         backgroundColor: Colors.green,
       ),
+      backgroundColor: Colors.white,
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Padding(
               padding: EdgeInsets.all(8),
@@ -39,12 +54,12 @@ class _HomeState extends State<Home> {
 
                 GestureDetector(
                 child: Image.asset("images/menu_empresa.png"),
-                onTap: (){},
+                onTap: irTelaEmpresa,
                 ),
 
                 GestureDetector(
                   child: Image.asset("images/menu_servico.png"),
-                  onTap: (){},
+                  onTap: irTelaServicos,
                 ),
               ],
             ),
@@ -56,11 +71,11 @@ class _HomeState extends State<Home> {
               children: [
                 GestureDetector(
                   child: Image.asset("images/menu_cliente.png"),
-                  onTap: (){print("testando onTAP");},
+                  onTap: irTelaClientes,
                 ),
 
                 GestureDetector(
-                  onTap: (){},
+                  onTap: irTelaContato,
                   child: Image.asset("images/menu_contato.png"),
                 ),
               ],
