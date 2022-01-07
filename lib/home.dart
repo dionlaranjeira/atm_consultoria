@@ -28,9 +28,44 @@ class _HomeState extends State<Home> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Padding(
-              padding: EdgeInsets.all(32),
+              padding: EdgeInsets.all(8),
               child: Image.asset("images/logo.png"),
-          )
+          ),
+          Padding(
+            padding: EdgeInsets.all(8),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+
+                GestureDetector(
+                child: Image.asset("images/menu_empresa.png"),
+                onTap: (){},
+                ),
+
+                GestureDetector(
+                  child: Image.asset("images/menu_servico.png"),
+                  onTap: (){},
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(8),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                GestureDetector(
+                  child: Image.asset("images/menu_cliente.png"),
+                  onTap: (){print("testando onTAP");},
+                ),
+
+                GestureDetector(
+                  onTap: (){},
+                  child: Image.asset("images/menu_contato.png"),
+                ),
+              ],
+            ),
+          ),
         ],
       )
     );
